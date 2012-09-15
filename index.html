@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Lifebucket by hdonnay</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Lifebucket</h1>
+        <h2></h2>
+
+        <section id="downloads">
+          <a href="https://github.com/hdonnay/lifebucket/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/hdonnay/lifebucket/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/hdonnay/lifebucket" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>What's all this, then?</h3>
+
+<p>Lifebucket is webapp that uses CouchDB as a backend to help you quantify your life.</p>
+
+<h3>Notes</h3>
+
+<ul>
+<li>Haven't even started on the output. Not sure how I'm going to implement that, yet.</li>
+<li>Lifebucket is still under heavy development, the external API <strong>will</strong> be changing. That said, the only thing that Lifebucket cares about in the data, the timestamp, won't change (from UNIX epoch time). End result is: if you intend to only use the web frontend for now, it's perfectly usable (for input).</li>
+<li>I haven't bothered doing a real deployment yet, I can't help with that.</li>
+</ul><h3>Install</h3>
+
+<pre><code>% git clone https://github.com/hdonnay/lifebucket.git
+% cd lifebucket
+% cpanm Dancer YAML Dancer::Template::Tenjin AnyEvent::CouchDB Dancer::Plugin::Auth::Basic
+% COUCH_URL="https://user:pass@my.iriscouch.com:6894" ./bin/app.pl
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
