@@ -40,10 +40,10 @@
 <li>I haven't bothered doing a real deployment yet, I can't help with that.</li>
 </ul><h3>Install</h3>
 
-<pre><code>% git clone https://github.com/hdonnay/lifebucket.git
-% cd lifebucket
-% cpanm Dancer YAML Dancer::Template::Tenjin AnyEvent::CouchDB Dancer::Plugin::Auth::Basic
-% COUCH_URL="https://user:pass@my.iriscouch.com:6894" ./bin/app.pl
+<pre><code>git clone https://github.com/hdonnay/lifebucket.git
+cd lifebucket
+cpanm Dancer YAML Dancer::Template::Tenjin Dancer::Plugin::Auth::Basic AnyEvent::CouchDB
+COUCH_URL="https://user:pass@my.iriscouch.com:6894" ./bin/app.pl
 </code></pre>
       </section>
     </div>
