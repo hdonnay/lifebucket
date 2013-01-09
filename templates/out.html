@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="row-fluid">
+    <div class="span1">
+    </div>
+    <div class="span10">
+        <form action="{{ url_for('post_lens') }}" method="POST" class="form-horizontal">
+            {{ form.csrf_token }}
+            <legend>Make a lens</legend>
+            <div class="control-group">
+                <div class="controls">{{ form.lens(class='span10') }}</div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-large span10">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="span1">
+    </div>
+</div>
+{% endblock %}
