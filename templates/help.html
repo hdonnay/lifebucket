@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="row-fluid">
+    <div class="span8 offset2">
+        <h1>HELP!</h1>
+        <p> Hopefully this can get out on your way to using Lifebucket for self
+            discovery. If you've got questions not covered in this document, hit up
+            the <a href="https://hdonnay.github.com/lifebucket">main Lifebucket site</a>
+            and check the wiki or file a bug.</p>
+        <p> Thanks for using Lifebucket!</p>
+        <hr />
+        <ul>
+            <li>
+                <h4>Postgres? Where do I get that?</h4>
+                <p> Postgres is packaged and easily installable for most flavors of Linux.</p>
+                <p> Versions &gt; 9.0 are targeted for use, try to install one of those.</p>
+            </li>
+            <li>
+                <h4>How is Lifebucket licensed?</h4>
+                <p> Lifebucket is licensed under the <a
+                    href="http://www.gnu.org/licenses/agpl.html">AGPL v3</a>.
+                    You can see the full text <a href="{{ url_for('copyright') }}">
+                    here</a>.</p>
+                <p> All components used are licensed with their respective
+                    licenses. All non-code components of Lifebucket (such as
+                    this help text and any logos) are licensed by a
+                    <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">
+                    Creative Commons Attribution-ShareAlike 3.0 license</a>.</p>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

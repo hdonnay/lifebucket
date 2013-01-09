@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf8" />
+        <title>Lifebucket - {% block title %}{% endblock %}</title>
+        <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='bootstrap-responsive.css') }}" rel="stylesheet">
+        <style type="text/css">
+            body { padding-top: 60px; padding-bottom: 40px; }
+            .sidebar-nav { padding: 9px 0; }
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+        <script>$(".alert").alert()</script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="{{ url_for('index') }}">lifebucket</a>
+                    <ul class="nav pull-right">
+                    {% if request.path == url_for('index') %}
+                        <li class="active"><a href="{{ url_for('index') }}">input</a></li>
+                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('settings') }}">settings</a></li>
+                    {% elif request.path == url_for('output') %}
+                        <li><a href="{{ url_for('index') }}">input</a></li>
+                        <li class="active"><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('settings') }}">settings</a></li>
+                    {% elif request.path == url_for('settings') %}
+                        <li><a href="{{ url_for('index') }}">input</a></li>
+                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li class="active"><a href="{{ url_for('settings') }}">settings</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('index') }}">input</a></li>
+                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('settings') }}">settings</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+        {% for message in get_flashed_messages() %}
+            <div class="row-fluid">
+                <div class="alert alert-success span6 offset3 fade in">{{ message }} <button type="button" class="close" data-dismiss="alert">×</button></div>
+            </div>
+        {% endfor %}
+        {% block body %}{% endblock %}
+        </div>
+        <div id="footer" class="container-fluid">
+            <span>Powered by <a href="http://flask.pocoo.org/">Flask</a>, <a href="http://www.postgresql.org/">Postgres</a>, and <a href="http://twitter.github.com/bootstrap/">Bootstrap</a></span>
+            <span class="pull-right"><a href="{{ url_for('copyright') }}">Copyright</a> and <a href="{{ url_for('help') }}">Help</a></span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block body %}
+<div class="row-fluid">
+    <div class="span1">
+    </div>
+    <div class="span10">
+        <form action="{{ url_for('post') }}" method="POST" class="form-horizontal">
+            {{ form.csrf_token }}
+            <legend>Store Something.</legend>
+            <div class="control-group">
+                <label class="control-label" for="form_title">{{ form.key.label }}</label>
+                <div class="controls">{{ form.key(class='span10') }}</div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="form_title">{{ form.value.label }}</label>
+                <div class="controls">{{ form.value(class='span10', rows=5) }}</div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-large span10">Store!</button>
+                </div>
+            </div>
+        </form>
+        <script>
+            $('#form_title').tooltip({
+                delay: { show: 500, hide: 100 },
+                placement: "right",
+                title: "Use a consistent title for easier retrivial."
+            })
+            $('#form_contents').tooltip({
+                delay: { show: 500, hide: 100 },
+                placement: "right",
+                title: "You can use JSON to make more complex entries."
+            })
+        </script>
+    </div>
+    <div class="span1">
+    </div>
+</div>
+{% endblock %}
