@@ -21,19 +21,19 @@
                     <ul class="nav pull-right">
                     {% if request.path == url_for('index') %}
                         <li class="active"><a href="{{ url_for('index') }}">input</a></li>
-                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('lens_input') }}">add lens</a></li>
                         <li><a href="{{ url_for('settings') }}">settings</a></li>
-                    {% elif request.path == url_for('output') %}
+                    {% elif request.path == url_for('lens_input') %}
                         <li><a href="{{ url_for('index') }}">input</a></li>
-                        <li class="active"><a href="{{ url_for('output') }}">output</a></li>
+                        <li class="active"><a href="{{ url_for('lens_input') }}">add lens</a></li>
                         <li><a href="{{ url_for('settings') }}">settings</a></li>
                     {% elif request.path == url_for('settings') %}
                         <li><a href="{{ url_for('index') }}">input</a></li>
-                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('lens_input') }}">add lens</a></li>
                         <li class="active"><a href="{{ url_for('settings') }}">settings</a></li>
                     {% else %}
                         <li><a href="{{ url_for('index') }}">input</a></li>
-                        <li><a href="{{ url_for('output') }}">output</a></li>
+                        <li><a href="{{ url_for('lens_input') }}">add lens</a></li>
                         <li><a href="{{ url_for('settings') }}">settings</a></li>
                     {% endif %}
                     </ul>
